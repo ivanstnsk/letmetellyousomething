@@ -256,7 +256,7 @@ button {
 input[type="text"] {
   min-height: 50px;
   font-family: "Text", sans-serif;
-  background-color: #060a0c;
+  background-color: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
   padding: 10px;
@@ -268,7 +268,7 @@ input[type="text"] {
 }
 
 input[type="text"]::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .big-title {
@@ -306,15 +306,16 @@ input[type="text"]::placeholder {
 
 .color-picker {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 10px;
 }
 
 .color-options {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 }
 
 .color-option {
@@ -365,10 +366,11 @@ input[type="text"]::placeholder {
 
 .color-option:hover {
   transform: scale(1.1);
-  border-color: black;
+  border-color: white;
 }
 
 .color-option.selected {
+  transform: scale(1.1);
   border-color: white;
   box-shadow: 0 0 0 2px black;
 }
@@ -588,4 +590,24 @@ ol {
   transform: rotate(-31deg);
   z-index: 100;
   pointer-events: none;
+}
+
+.mobile-warning {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  z-index: 9999;
+  overflow-y: scroll;
+  padding: 60px;
+}
+.mobile-warning p {
+  text-align: center;
 }

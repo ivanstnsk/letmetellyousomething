@@ -168,18 +168,18 @@ const movement = {
 };
 
 // Character selection
-characterOptions.forEach((option) => {
-  option.addEventListener("click", () => {
-    // Remove selected class from all options
-    characterOptions.forEach((opt) => opt.classList.remove("selected"));
+// characterOptions.forEach((option) => {
+//   option.addEventListener("click", () => {
+//     // Remove selected class from all options
+//     characterOptions.forEach((opt) => opt.classList.remove("selected"));
 
-    // Add selected class to clicked option
-    option.classList.add("selected");
+//     // Add selected class to clicked option
+//     option.classList.add("selected");
 
-    // Get selected character ID
-    selectedCharacterId = parseInt(option.dataset.characterId);
-  });
-});
+//     // Get selected character ID
+//     selectedCharacterId = parseInt(option.dataset.characterId);
+//   });
+// });
 
 // Create latency predictor
 const latencyPredictor = new LatencyPredictor();
@@ -827,7 +827,7 @@ function setupSocketListeners() {
         localPlayer.y = CONFIG.canvasHeight / 2;
         localPlayer.color = selectedColor;
 
-        console.log("Local player initialized:", localPlayer);
+        // console.log("Local player initialized:", localPlayer);
 
         requestAnimationFrame(() => {
           connectEl.style.display = "none";
@@ -875,7 +875,7 @@ function setupSocketListeners() {
   });
 
   socket.on("playerDraw", (drawData) => {
-    console.log("GET draw data", drawData);
+    // console.log("GET draw data", drawData);
     if (players[drawData.id]) {
       drawZoneMiddleLeftData.push({
         x: drawData.x,

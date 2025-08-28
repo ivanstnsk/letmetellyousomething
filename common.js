@@ -24,7 +24,7 @@ const latencyInfo = document.getElementById("latencyInfo");
 const pingDisplay = document.getElementById("pingDisplay");
 const jitterDisplay = document.getElementById("jitterDisplay");
 const predictionDisplay = document.getElementById("predictionDisplay");
-const characterOptions = document.querySelectorAll(".character-option");
+// const characterOptions = document.querySelectorAll(".character-option");
 const info = document.getElementById("info");
 const connectEl = document.getElementById("connection");
 const tutorialEl = document.getElementById("tutorial-overlay-template");
@@ -170,7 +170,6 @@ class TutorialMovement {
   }
 
   markKeyPressed(key) {
-    console.log("Marking key pressed:", key);
     switch (key) {
       case "up":
         this.keyUPPressedOnce = true;
@@ -377,6 +376,15 @@ class ZonesManager {
 const zonesManager = new ZonesManager();
 
 document.addEventListener("DOMContentLoaded", () => {
+  const md = new MobileDetect(window.navigator.userAgent, 1000);
+  if (md.mobile() || window.innerWidth < 1000 || window.innerHeight < 600) {
+    const el = document.getElementById("mobile-warning");
+
+    if (el) {
+      el.style.display = "flex";
+    }
+  }
+
   const colorOptions = document.querySelectorAll(".color-option");
   colorOptions.forEach((option) => {
     option.addEventListener("click", () => {

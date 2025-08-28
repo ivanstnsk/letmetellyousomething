@@ -1,0 +1,16 @@
+{
+  "name": "multiplayer-top-down-game-client",
+  "version": "1.0.0",
+  "description": "Client-side for multiplayer top-down game",
+  "scripts": {
+    "start": "npx http-server .",
+    "dev": "npx http-server . -c-1 -p 25565",
+    "build": "echo 'No build step required for static site'"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.7.2"
+  }
+}

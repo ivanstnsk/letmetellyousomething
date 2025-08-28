@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Multiplayer Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="playerSetup">
+      <div class="container">
+        <div class="big-title">
+          <div class="row">So, you wanna</div>
+          <div class="row">
+            <div class="sign"></div>
+            this?
+          </div>
+        </div>
+        <!-- <div class="character-grid">
+            <img src="characters/character1.png" alt="Character 1" class="character-option" data-character-id="1">
+            <img src="characters/character2.png" alt="Character 2" class="character-option" data-character-id="2">
+            <img src="characters/character3.png" alt="Character 3" class="character-option" data-character-id="3">
+            <img src="characters/character4.png" alt="Character 4" class="character-option" data-character-id="4">
+        </div> -->
+        <br />
+        <br />
+        <br />
+        <br />
+        <input
+          type="text"
+          id="serverUrlInput"
+          value="http://46.101.123.144:3000"
+          placeholder="Enter server URL (e.g., https://your-server.com)"
+          style="display: none"
+        />
+        <input
+          type="text"
+          id="nameInput"
+          value="jo"
+          placeholder="Enter your name"
+          maxlength="15"
+        />
+        <br />
+        <br />
+
+        <h2>Select color</h2>
+        <div class="color-picker">
+          <div class="color-options">
+            <div class="color-option" data-color="#9BFF00"></div>
+            <div class="color-option" data-color="#6018F2"></div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <button id="joinButton">Join Game</button>
+      </div>
+    </div>
+
+    <div id="connection">
+      <h2>Conneting to the server...</h2>
+    </div>
+
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <div id="latencyInfo">
+      <div id="pingDisplay">Ping: - ms</div>
+      <div id="jitterDisplay">Jitter: - ms</div>
+      <div id="predictionDisplay">Prediction: Off</div>
+    </div>
+
+    <div id="info">
+      <div class="container">
+        <div class="grid-item" id="zone-top-left">
+          <div class="zone-content">
+            <div class="zone-content-inner">
+              <div class="zone-big-title">Achievements</div>
+              <div class="giphy-iframe" style="transform: rotateZ(-6deg)">
+                <div class="tape-top-left"></div>
+                <div class="tape-bottom-right"></div>
+                <iframe
+                  src="https://giphy.com/embed/PGUN4KoNLm5HnwsCye"
+                  width="480"
+                  height="480"
+                  style=""
+                  frameborder="0"
+                  class="giphy-embed"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="project-title">Retire US</div>
+              <ol>
+                <li><p>We made a huge refactoring of user survey flow.</p></li>
+                <li>
+                  <p>
+                    Main goal was to improve performance and style consistency.
+                  </p>
+                </li>
+                <li><p>Developer experience was improved as well.</p></li>
+              </ol>
+              <div class="refactor-stats">
+                <div class="refactor-card">
+                  <span class="refactor-number">60%+</span>
+                  <div class="refactor-label">Project Refactored</div>
+                  <div class="refactor-description">
+                    Enhanced performance and style consistency
+                  </div>
+                </div>
+
+                <div class="refactor-card">
+                  <span class="refactor-number">300+</span>
+                  <div class="refactor-label">Commits</div>
+                  <div class="refactor-description">
+                    Systematic improvements delivered
+                  </div>
+                </div>
+
+                <div class="refactor-card">
+                  <span class="refactor-number">30,900+</span>
+                  <div class="refactor-label">Lines of Code</div>
+                  <div class="refactor-description">
+                    Comprehensive codebase transformation
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item" id="zone-top-center">
+          <div class="zone-name vertical">CHECK RIGHT</div>
+        </div>
+        <div class="grid-item" id="zone-top-right">
+          <div class="zone-content">
+            <div class="zone-content-inner">
+              <div class="zone-big-title">Achievements</div>
+              <div class="giphy-iframe" style="transform: rotateZ(4deg)">
+                <div class="tape-top-left"></div>
+                <div class="tape-bottom-right"></div>
+                <iframe
+                  src="https://giphy.com/embed/wGWFVvwJybDwTlnTSS"
+                  width="480"
+                  height="480"
+                  style=""
+                  frameborder="0"
+                  class="giphy-embed"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="project-title">Transporeon</div>
+              <ol>
+                <li><p>Huge Pimcore upgrade from v10 to v11.</p></li>
+                <li>
+                  <p>
+                    Develop communication channel between Qream and DevOps
+                    company.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Develop new DevOps skills to be able to finish the project.
+                  </p>
+                </li>
+                <li>
+                  <p>Refresh & gain more knowledge in Backend development.</p>
+                </li>
+                <li>
+                  <p>Become trully Full Stack dev.</p>
+                </li>
+              </ol>
+
+              <div class="refactor-stats">
+                <div class="refactor-card">
+                  <span class="refactor-number">6+ month</span>
+                  <div class="refactor-label">
+                    Costanly work on one big task
+                  </div>
+                  <div class="refactor-description">
+                    To upgrade the whole website to new system
+                  </div>
+                </div>
+
+                <div class="refactor-card">
+                  <span class="refactor-number">1000+</span>
+                  <div class="refactor-label">Commits</div>
+                  <div class="refactor-description">
+                    Omg, I'm so proud of myself
+                  </div>
+                </div>
+
+                <div class="refactor-card">
+                  <span class="refactor-number">62,000+</span>
+                  <div class="refactor-label">Lines of Code</div>
+                  <div class="refactor-description">
+                    Changed in idea in mind to not broken the whole website
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item" id="zone-middle-left">
+          <div class="zone-name">CHECK BELLOW</div>
+        </div>
+        <div class="grid-item middle-cell" id="zone-middle">
+          <div class="grafity-safe-zone"></div>
+        </div>
+        <div class="grid-item" id="zone-middle-right">
+          <div class="zone-name">CHECK ABOVE</div>
+        </div>
+
+        <div class="grid-item" id="zone-bottom-left">
+          <div class="zone-content">
+            <div class="zone-content-inner">
+              <div class="zone-big-title">What's next?</div>
+              <div class="giphy-iframe" style="transform: rotateZ(-7deg)">
+                <div class="tape-top-left"></div>
+                <div class="tape-bottom-right"></div>
+                <iframe
+                  src="https://giphy.com/embed/srDEIHiXFTr1cNmrTR"
+                  width="480"
+                  height="295"
+                  style=""
+                  frameborder="0"
+                  class="giphy-embed"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="project-title">Full Stack</div>
+              <ol>
+                <li><p>Lead the Transporeon project.</p></li>
+                <li>
+                  <p>Gain more skills in Web 3D</p>
+                </li>
+                <li>
+                  <p>Work on more complex projects</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item" id="zone-bottom-center">
+          <div class="zone-name vertical">CHECK LEFT</div>
+        </div>
+        <div class="grid-item" id="zone-bottom-right">
+          <div class="zone-content">
+            <div class="zone-content-inner">
+              <div class="zone-big-title">BTW</div>
+              <div class="giphy-iframe" style="transform: rotateZ(-7deg)">
+                <div class="tape-top-left"></div>
+                <div class="tape-bottom-right"></div>
+                <img width="650" src="assets/app.png" />
+              </div>
+              <div class="project-title">I can make mobile apps</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tutorial-overlay-template" class="hidden">
+      <div class="tutorial-content">
+        <div class="tutorial-title">Movement</div>
+        <p>Use the WASD keys to move your character:</p>
+        <div class="wasd-grid">
+          <div id="tutorial-up-key" class="wasd-key" style="grid-area: W">
+            W
+          </div>
+          <div id="tutorial-left-key" class="wasd-key" style="grid-area: A">
+            A
+          </div>
+          <div id="tutorial-down-key" class="wasd-key" style="grid-area: S">
+            S
+          </div>
+          <div id="tutorial-right-key" class="wasd-key" style="grid-area: D">
+            D
+          </div>
+        </div>
+        <p>Move around the world and explore!</p>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+    <script src="latency-predictor.js"></script>
+    <script src="common.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
